@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Question</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="card">
+    <h2>Add a Question</h2>
+    <form th:action="@{/add}" method="post" th:object="${question}">
+        <label>Type:</label><br>
+        <select th:field="*{type}" class="btn">
+            <option>truth</option>
+            <option>dare</option>
+        </select><br><br>
+        <label>Category:</label><br>
+        <select th:field="*{category}" class="btn">
+            <option>funny</option>
+            <option>romantic</option>
+            <option>extreme</option>
+        </select><br><br>
+        <label>Content:</label><br>
+        <textarea th:field="*{content}" rows="4" cols="40" class="btn"></textarea><br><br>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <br>
+    <a href="/" class="btn">Back</a>
+</div>
+</body>
+</html>

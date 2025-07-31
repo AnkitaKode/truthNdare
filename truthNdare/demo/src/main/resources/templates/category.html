@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Select Category</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="card">
+    <h2>Choose a Category</h2>
+    <form action="/play" method="get">
+        <input type="hidden" name="type" th:value="${type}" />
+        <button type="submit" name="category" value="funny" class="btn">Funny</button>
+        <button type="submit" name="category" value="romantic" class="btn">Romantic</button>
+        <button type="submit" name="category" value="extreme" class="btn">Extreme</button>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Play</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="card">
+    <h2 th:text="'Your ' + ${type} + ':'"></h2>
+    <div class="question" th:text="${question.content}"></div>
+    <a href="/" class="btn">Back</a>
+</div>
+</body>
+</html>

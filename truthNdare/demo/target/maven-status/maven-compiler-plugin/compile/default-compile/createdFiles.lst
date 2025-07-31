@@ -1,0 +1,4 @@
+com\example\truthanddare\model\Question.class
+com\example\truthanddare\controller\QuestionController.class
+com\example\truthanddare\repository\QuestionRepository.class
+com\example\truthanddare\TruthOrDareApp.class

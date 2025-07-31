@@ -1,0 +1,72 @@
+/* Universal Hacker-Themed Style with Polygonal Blue Background */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: url('https://www.shutterstock.com/image-vector/blue-abstract-polygon-elegant-background-600nw-2526757671.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.card {
+    background: rgba(0, 0, 0, 0.75);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+    max-width: 90%;
+    width: 400px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h1, h2, h3 {
+    color: #00eaff;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #00eaff;
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    margin: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #33f5ff;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
