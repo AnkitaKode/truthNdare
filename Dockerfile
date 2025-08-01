@@ -1,15 +1,20 @@
-# Use the official OpenJDK image
-FROM openjdk:17-jdk-slim
+# 🔨 Stage 1: Build stage using Maven Wrapper
+FROM eclipse-temurin:21-jdk AS build
 
-# Set the working directory inside the container
 WORKDIR /app
 
-# Copy everything to the container
 COPY . .
 
-# Build the application using Maven Wrapper
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
-# Run the Spring Boot application
-CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
+# 🏃 Stage 2: Runtime stage
+FROM eclipse-temurin:21-jdk
 
+WORKDIR /app
+
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
+
+EXPOSE 8080
+
+ENTRYPOINT ["java", "-jar", "app.jar"]
